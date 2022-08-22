@@ -3,7 +3,7 @@ const https = require("https");
 const { configurationKey } = require("./config");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const apiKey = configurationKey.apiKey;
 const apiURLGeoLocation = "https://api.openweathermap.org/geo/1.0/direct";
