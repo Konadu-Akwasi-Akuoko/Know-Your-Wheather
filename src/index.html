@@ -8,6 +8,11 @@
     <title>Konadu's Weather App</title>
   </head>
   <body class="font-yaldevi bg-black relative text-white">
+    <div class="view-source-code">
+      <p>View the source code</p>
+      <a href="https://github.com/Konadu-Akwasi-Akuoko/Know-Your-Wheather">View</a>
+      <a onclick="onCancel(event)">Cancel</a>
+    </div>
     <!-- !Root -->
     <div class="xl:relative">
       <div class="w-screen h-screen absolute z-30 glassmorphism-lds loader">
@@ -70,7 +75,7 @@
                   <p class="hover:cursor-pointer" onclick="onClickName(event)">Manchester</p>
                   <p class="hover:cursor-pointer" onclick="onClickName(event)">California</p>
                   <p class="hover:cursor-pointer" onclick="onClickName(event)">Madrid</p>
-                  <p class="hover:cursor-pointer" onclick="onClickName(event)">Paris</p>
+                  <p class="hover:cursor-pointer" onclick="onClickName(event)">Accra</p>
                 </div>
               </div>
               <!-- !Horizontal rule -->
@@ -110,7 +115,7 @@
         <div class="container-phone">
           <!-- *Search Button -->
           <div
-            class="mt-6 mb-14 flex flex-row border-gray-400 glassmorphism justify-between focus-within:border-white"
+            class="mt-7 mb-14 flex flex-row border-gray-400 glassmorphism justify-between focus-within:border-white"
           >
             <div class="pl-4 pr-2 py-2 w-full">
               <input
@@ -133,7 +138,7 @@
           <!-- *Main Label -->
           <div class="glassmorphism w-full border-white">
             <div class="p-5 flex flex-col">
-              <p id="smallTempDP" class="text-8xl font-bold mb-8">16<sup>oc</sup></p>
+              <p id="smallTempDP" class="text-7xl font-bold mb-8">16<sup>oc</sup></p>
               <p class="text-5xl font-medium mb-4 locationDP-mobile">Kumasi</p>
               <p class="text-3xl font-medium mb-4 dateText">Monday, 11 Apr ‘20</p>
               <p class="text-3xl font-medium mb-4 timeText">06:09</p>

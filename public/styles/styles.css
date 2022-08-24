@@ -529,8 +529,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 40;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
 .mb-14 {
@@ -663,8 +663,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Yaldevi, sans-serif;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-7xl {
+  font-size: 4.5rem;
   line-height: 1;
 }
 
@@ -880,6 +880,33 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .removeLoader {
+  display: none;
+}
+
+.view-source-code {
+  background-color: beige;
+  color: black;
+  padding: 2px;
+  width: 100%;
+  padding-left: 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.view-source-code > * {
+  display: inline;
+}
+
+.view-source-code > a {
+  margin-left: 1rem;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.hide {
   display: none;
 }
 

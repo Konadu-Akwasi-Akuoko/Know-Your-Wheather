@@ -7,7 +7,7 @@ $(document).ready(function () {
   setInterval(() => {
     $(".dateText").html(getDate);
     $(".timeText").html(getTime);
-  }, 500);
+  }, 5000);
 });
 
 function getWeather() {
@@ -20,7 +20,7 @@ function getWeather() {
       console.log(data);
       $(".loader").remove("showLoader");
       $(".loader").addClass("removeLoader");
-      $("#locationDP").html(`${$("#search-box").val()}`);
+      $("#locationDP").html(`${$(".search-box").val()}`);
       //Big screens data
       $("#bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
       $("#bigWindSpeedDP").html(`${data.windSpeed} m/s`);
@@ -51,6 +51,26 @@ function getWeatherMobile() {
 
 function onClickName(event) {
   console.log(event.target.innerText);
+  $(".loader").addClass("showLoader");
+  $(".loader").removeClass("removeLoader");
+  fetch(`/weather?LocName=${event.target.innerText}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      $(".loader").remove("showLoader");
+      $(".loader").addClass("removeLoader");
+      $("#locationDP").html(`${event.target.innerText}`);
+      $(".search-box").val(`${event.target.innerText}`);
+      //Big screens data
+      $("#bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
+      $("#bigWindSpeedDP").html(`${data.windSpeed} m/s`);
+      $("#bigHumidityDP").html(`${data.humidity}%`);
+      $("#bigWeatherDP").html(`${data.weather}`);
+    });
+}
+
+function onCancel(event) {
+  $(".view-source-code").addClass("hide");
 }
 
 //Getting the date in MM/DD/YYYY
