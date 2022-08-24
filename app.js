@@ -33,6 +33,7 @@ app.get("/weather", (reqExpress, resExpress) => {
     https.get(
       `${apiURLGeoLocation}?appid=${apiKey}&limit=1&q=${reqExpress.query.LocName}`,
       (resHTTPS) => {
+        console.log(reqExpress.query.LocName);
         resHTTPS
           .on("data", (data) => {
             try {

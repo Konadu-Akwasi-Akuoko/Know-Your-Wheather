@@ -56,11 +56,10 @@
               <!-- !Search Box -->
                 <div id="search-text" class="xl:flex">
                   <input
-                    id="search-box"
                     value="Kumasi"
                     type="text"
                     placeholder="Type In Another City"
-                    class="xl:self-end xl:font-extralight xl:text-3xl xl:w-full xl:bg-inherit xl:border-b-2 xl:border-b-gray-400 xl:placeholder:text-gray-400 xl:active:outline-0 xl:focus:outline-0 xl:focus:border-b-white"
+                    class="search-box xl:self-end xl:font-extralight xl:text-3xl xl:w-full xl:bg-inherit xl:border-b-2 xl:border-b-gray-400 xl:placeholder:text-gray-400 xl:active:outline-0 xl:focus:outline-0 xl:focus:border-b-white"
                   /></div
 
               <!-- !Suggested Cities -->
@@ -93,10 +92,10 @@
                   <div
                     class="xl:flex xl:flex-col xl:space-y-7 xl:justify-items-end xl:text-right"
                   >
-                    <p id="smallTempDP" class="xl:text-2xl xl:font-medium">16 <sup>oc</sup></p>
-                    <p id="smallWindSpeedDP" class="xl:text-2xl xl:font-medium">8km/hr</p>
-                    <p id="smallHumidityDP" class="xl:text-2xl xl:font-medium">88</p>
-                    <p id="smallWeatherDP" class="xl:text-2xl xl:font-medium">Rainy</p>
+                    <p id="bigTempDP" class="xl:text-2xl xl:font-medium">16 <sup>oc</sup></p>
+                    <p id="bigWindSpeedDP" class="xl:text-2xl xl:font-medium">8km/hr</p>
+                    <p id="bigHumidityDP" class="xl:text-2xl xl:font-medium">88</p>
+                    <p id="bigWeatherDP" class="xl:text-2xl xl:font-medium">Rainy</p>
                   </div>
                 </div>
               </div>
@@ -116,12 +115,13 @@
             <div class="pl-4 pr-2 py-2 w-full">
               <input
                 type="text"
+                value="Kumasi"
                 placeholder="Type in another city"
-                class="font-extralight bg-inherit placeholder:text-gray-400 focus-visible:outline-none w-full"
+                class="search-box-mobile font-extralight bg-inherit placeholder:text-gray-400 focus-visible:outline-none w-full"
               />
             </div>
             <div class="pr-4 py-2">
-              <a href="">
+              <a onclick="getWeatherMobile()">
                 <span
                   class="iconify xl:mx-auto xl:text-center"
                   data-icon="bi:search"
@@ -133,8 +133,8 @@
           <!-- *Main Label -->
           <div class="glassmorphism w-full border-white">
             <div class="p-5 flex flex-col">
-              <p class="text-8xl font-bold mb-8">16<sup>oc</sup></p>
-              <p class="text-5xl font-medium mb-4">Kumasi</p>
+              <p id="smallTempDP" class="text-8xl font-bold mb-8">16<sup>oc</sup></p>
+              <p class="text-5xl font-medium mb-4 locationDP-mobile">Kumasi</p>
               <p class="text-3xl font-medium mb-4 dateText">Monday, 11 Apr ‘20</p>
               <p class="text-3xl font-medium mb-4 timeText">06:09</p>
             </div>
@@ -145,17 +145,17 @@
               class="flex flex-row p-5 justify-between items-center text-center"
             >
               <div class="flex flex-col space-y-1.5">
-                <p class="text-lg font-bold">88</p>
+                <p id="smallHumidityDP" class="text-lg font-bold">88</p>
                 <p class="text-xs">Humidity</p>
               </div>
               <div id="secondry-label-horizontal-br"></div>
               <div class="flex flex-col space-y-1.5">
-                <p class="text-lg font-bold">8 km/hr</p>
+                <p id="smallWindSpeedDP" class="text-lg font-bold">8 km/hr</p>
                 <p class="text-xs">Wind Speed</p>
               </div>
               <div id="secondry-label-horizontal-br"></div>
               <div class="flex flex-col space-y-1.5">
-                <p class="text-lg font-bold">Rainy</p>
+                <p id="smallWeatherDP" class="text-lg font-bold">Rainy</p>
                 <p class="text-xs">Weather</p>
               </div>
             </div>

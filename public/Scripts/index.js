@@ -1,30 +1,49 @@
 $(document).ready(function () {
   getWeather();
+  getWeatherMobile();
   $(".dateText").html(getDate);
   $(".timeText").html(getTime);
 
   setInterval(() => {
     $(".dateText").html(getDate);
     $(".timeText").html(getTime);
-  }, 60000);
+  }, 500);
 });
 
 function getWeather() {
-  console.log("IndexJS getWeather message: " + $("#search-box").val());
+  console.log("IndexJS getWeather message: " + $(".search-box").val());
   $(".loader").addClass("showLoader");
   $(".loader").removeClass("removeLoader");
-  fetch(`/weather?LocName=${$("#search-box").val()}`)
+  fetch(`/weather?LocName=${$(".search-box").val()}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       $(".loader").remove("showLoader");
       $(".loader").addClass("removeLoader");
       $("#locationDP").html(`${$("#search-box").val()}`);
-      $(".locationDP").html(`${$("#search-box").val()}`);
+      //Big screens data
       $("#bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
-      $(".bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
+      $("#bigWindSpeedDP").html(`${data.windSpeed} m/s`);
+      $("#bigHumidityDP").html(`${data.humidity}%`);
+      $("#bigWeatherDP").html(`${data.weather}`);
+    });
+}
+
+function getWeatherMobile() {
+  console.log("IndexJS getWeather message: " + $(".search-box-mobile").val());
+  $(".loader").addClass("showLoader");
+  $(".loader").removeClass("removeLoader");
+  fetch(`/weather?LocName=${$(".search-box-mobile").val()}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      $(".loader").remove("showLoader");
+      $(".loader").addClass("removeLoader");
+      $(".locationDP-mobile").html(`${$(".search-box-mobile").val()}`);
+      //Small screens data
       $("#smallTempDP").html(`${data.temperature}<sup>oc</sup>`);
-      $("#smallWindSpeedDP").html(`${data.windSpeed}m/s`);
+      console.log($("#smallTempDP").html());
+      $("#smallWindSpeedDP").html(`${data.windSpeed} m/s`);
       $("#smallHumidityDP").html(`${data.humidity}%`);
       $("#smallWeatherDP").html(`${data.weather}`);
     });
