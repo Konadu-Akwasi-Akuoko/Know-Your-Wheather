@@ -1,7 +1,12 @@
 $(document).ready(function () {
   getWeather();
-  $("#dateText").html(getDate);
-  $("#timeText").html(getTime);
+  $(".dateText").html(getDate);
+  $(".timeText").html(getTime);
+
+  setInterval(() => {
+    $(".dateText").html(getDate);
+    $(".timeText").html(getTime);
+  }, 60000);
 });
 
 function getWeather() {
@@ -15,12 +20,18 @@ function getWeather() {
       $(".loader").remove("showLoader");
       $(".loader").addClass("removeLoader");
       $("#locationDP").html(`${$("#search-box").val()}`);
+      $(".locationDP").html(`${$("#search-box").val()}`);
       $("#bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
+      $(".bigTempDP").html(`${data.temperature}<sup>oc</sup>`);
       $("#smallTempDP").html(`${data.temperature}<sup>oc</sup>`);
       $("#smallWindSpeedDP").html(`${data.windSpeed}m/s`);
       $("#smallHumidityDP").html(`${data.humidity}%`);
       $("#smallWeatherDP").html(`${data.weather}`);
     });
+}
+
+function onClickName(event) {
+  console.log(event.target.innerText);
 }
 
 //Getting the date in MM/DD/YYYY
